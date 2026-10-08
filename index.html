@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>FXCB Traders | Under Maintenance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070706'/%3E%3Cpath d='M8 46 L22 34 L32 40 L44 22 L56 14' fill='none' stroke='%23E6C45C' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#070706; --panel:#11100C; --line:#322d1b;
+  --text:#F6F1E3; --muted:#A8A08A; --gold:#C9A227; --gold-hi:#E6C45C; --gold-soft:#F2D27A;
+  --display:'Unbounded','Arial Black',system-ui,sans-serif;
+  --body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
+  display:flex;flex-direction:column;position:relative;overflow-x:hidden}
+.glow{position:fixed;width:700px;height:700px;right:-200px;top:-260px;background:radial-gradient(circle,rgba(212,175,55,.26),transparent 65%);pointer-events:none}
+svg.chart{position:fixed;left:0;right:0;bottom:0;width:100%;height:46%;pointer-events:none;opacity:.9}
+.line{stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.2s .2s cubic-bezier(.3,.7,.2,1) forwards}
+.area{opacity:0;animation:fade 1.4s 2.4s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+
+header{position:relative;padding:26px 22px;max-width:1100px;width:100%;margin:0 auto}
+.logo{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo b{color:var(--gold-hi)}
+
+main{position:relative;flex:1;display:flex;align-items:center;padding:20px 22px 80px;max-width:1100px;width:100%;margin:0 auto}
+.box{max-width:640px}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(17,16,12,.8);border-radius:999px;padding:7px 16px;font-size:13.5px;font-weight:700;color:var(--gold-soft);margin-bottom:26px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--gold-hi);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.8)}}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(36px,7vw,76px);line-height:1.04;letter-spacing:-.04em;margin:0 0 22px}
+h1 span{color:var(--gold-hi)}
+p.lede{font-size:clamp(17px,2.1vw,21px);color:var(--muted);margin:0 0 34px;max-width:46ch}
+.support{background:rgba(17,16,12,.88);border:1px solid var(--line);border-radius:20px;padding:24px;backdrop-filter:blur(6px)}
+.support h2{font-family:var(--display);font-size:15px;font-weight:700;margin:0 0 6px}
+.support p{margin:0 0 18px;color:var(--muted);font-size:15px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--gold);color:#000;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px;font-size:15.5px;transition:transform .15s,background .15s}
+.btn:hover{background:var(--gold-hi);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn.ghost:hover{background:var(--panel);border-color:var(--gold-hi)}
+:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px;border-radius:8px}
+.info{margin-top:18px;font-size:14.5px;color:var(--muted);word-break:break-word}
+.info a{color:var(--text)}
+
+footer{position:relative;padding:20px 22px 26px;text-align:center;color:var(--muted);font-size:13px}
+
+@media(max-width:560px){.btn{flex:1;text-align:center}}
+@media(prefers-reduced-motion:reduce){
+  .line{animation:none;stroke-dashoffset:0}.area{animation:none;opacity:1}.dot{animation:none}.btn{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<svg class="chart" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D4AF37" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path class="area" fill="url(#ag)" d="M0 340 L90 310 L170 330 L260 250 L340 275 L430 190 L510 225 L600 150 L690 185 L770 110 L860 140 L950 70 L1040 95 L1120 40 L1200 55 L1200 400 L0 400 Z"/>
+  <path class="line" fill="none" stroke="#E6C45C" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linejoin="round" d="M0 340 L90 310 L170 330 L260 250 L340 275 L430 190 L510 225 L600 150 L690 185 L770 110 L860 140 L950 70 L1040 95 L1120 40 L1200 55"/>
+</svg>
+
+<header><div class="logo">FX<b>CB</b> Traders</div></header>
+
+<main>
+  <div class="box">
+    <div class="badge"><span class="dot"></span>Scheduled maintenance</div>
+    <h1>We're upgrading <span>our system.</span></h1>
+    <p class="lede">We're upgrading our system to give you the best. The site is under maintenance for now and will be live soon on the normal domain, <strong style="color:var(--text)">fxcb.site</strong>. Thanks for your patience.</p>
+
+    <div class="support">
+      <h2>Need help? Contact support</h2>
+      <p>If you have any problem, reach us directly and we'll help you.</p>
+      <div class="row">
+        <a class="btn" href="https://wa.me/19459973128?text=Hi%20FXCB%20Traders%2C%20I%20need%20support." target="_blank" rel="noopener">WhatsApp support</a>
+        <a class="btn ghost" href="tel:+19459973128">Call</a>
+        <a class="btn ghost" href="mailto:support@fxcb.site">Email</a>
+      </div>
+      <div class="info">+1 945 997 3128 &nbsp;|&nbsp; <a href="mailto:support@fxcb.site">support@fxcb.site</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>&copy; <span id="yr">2026</span> FXCB Traders. All rights reserved.</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
